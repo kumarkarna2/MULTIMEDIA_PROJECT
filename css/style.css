@@ -1,0 +1,170 @@
+body {
+    font-family: 'Baloo Bhai 2', cursive;
+    margin: 0px;
+    padding: 0px;
+    background: url('/images/bg.jpg');
+    /* background-color: black; */
+}
+
+.header{
+    /* position: sticky; */
+    border-bottom: 3px solid red;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.left {
+    color: white;
+    display: inline-block;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    width: 14%;
+}
+
+.left img {
+    height: 41px;
+    margin-left: -10px;
+    margin-top: -24px;
+}
+
+.left div {
+    text-align: center;
+    font-size: 14px;
+    line-height: 5px;
+}
+
+.mid {
+    /* border: 2px solid green; */
+    color: white;
+    display: block;
+    width: 50%;
+    margin: 27px auto;
+}
+
+.right {
+    /* border: 2px solid yellow; */
+    display: flex;
+    color: white;
+    position: absolute;
+    right: 40px;
+    top: 23px;
+}
+
+.right div{
+    margin-left: 10px;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 34px 20px;
+    font-size: 15px;
+}
+
+.navbar li a.active {
+    color: rgb(192, 0, 0);
+}
+
+.navbar li a:hover {
+    color: rgb(163, 0, 0);
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group{
+    width: 300px;
+}
+
+.form-group input {
+    font-family: 'Baloo Bhai 2', cursive;
+    text-align: center;
+    width: 100%;
+    padding: 7px;
+    margin: 8px auto;
+    border: transparent;
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+/* .text_white{
+    color: white;
+    text-align: center;
+} */
+
+.form_group_radio{
+    display: inline-block;
+    /* align-items: center; */
+    padding-top: 20px;
+}
+
+.login_div{
+    width: 350px;
+    border-top: 2px solid rgb(192, 0, 0);
+    border-bottom: 2px solid rgb(192, 0, 0);
+    border-radius: 10px;
+}
+
+.link_btn{
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 80px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Baloo Bhai 2', cursive;
+    color: white;
+    background-color: transparent;
+    padding: 4px 14px;
+    border: 2px solid rgb(163, 0, 0);
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+.link_btn:hover {
+    color: rgb(163, 0, 0);
+    background-color: rgba(255, 255, 255, 0.014);
+}
+
+.container{
+    color: white;
+}
+
+.container button {
+    color: white;
+    font-family: 'Baloo Bhai 2', cursive;
+    display: block;
+    width: 100px;
+    margin: 20px auto;
+}
+
+.container h1,h3{
+    text-align: center;
+    color: white;
+}
+
+.user{
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 200px;
+    text-align: center;
+    font-family: 'Baloo Bhai 2', cursive;
+    color: white;
+    background-color: transparent;
+    padding: 4px 14px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    font-size: 15px;
+}

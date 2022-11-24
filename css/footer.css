@@ -1,0 +1,45 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    border-top: 3px solid red;
+    border-radius: 15px;
+}
+
+footer h2,p{
+    display: block;
+    text-align: center;
+    color: aliceblue;
+}
+
+footer img{
+    height: 30px;
+}
+
+.footer_div1{
+    display: block;
+    margin: auto;
+}
+
+.footer_div1 ul li{
+    display: inline-block;
+    align-items: center;
+    padding-right: 30px;
+}
+
+.footer_div2{
+    display: block;
+    margin: auto;
+    color: aliceblue;
+}
+
+.footer_div3{
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.footer_div3 a{
+    color: darkslateblue;
+}
