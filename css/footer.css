@@ -1,38 +1,39 @@
-footer{
+footer {
     display: flex;
     flex-direction: column;
     border-top: 3px solid red;
     border-radius: 15px;
 }
 
-footer h2,p{
+footer h2,
+p {
     display: block;
     text-align: center;
     color: aliceblue;
 }
 
-footer img{
+footer img {
     height: 30px;
 }
 
-.footer_div1{
+.footer_div1 {
     display: block;
     margin: auto;
 }
 
-.footer_div1 ul li{
+.footer_div1 ul li {
     display: inline-block;
     align-items: center;
     padding-right: 30px;
 }
 
-.footer_div2{
+.footer_div2 {
     display: block;
     margin: auto;
     color: aliceblue;
 }
 
-.footer_div3{
+.footer_div3 {
     display: block;
     margin: auto;
     margin-bottom: 20px;
@@ -40,6 +41,77 @@ footer img{
     color: aliceblue;
 }
 
-.footer_div3 a{
+.footer_div3 a {
     color: darkslateblue;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+.insta {
+    text-decoration: none;
+    padding: 0 0.7vw;
+    margin-right: 2rem;
+    font-size: 2rem;
+    animation: float 5s ease-in-out infinite;
+
+}
+
+.bi-instagram {
+    color: rgb(211, 13, 13);
+}
+
+.insta :hover {
+    color: rgba(0, 216, 126, 0.811);
+}
+
+.fb {
+
+    text-decoration: none;
+    padding: 0 0.7vw;
+    margin: 0rem 2rem 0rem 2rem;
+    font-size: 2rem;
+    animation: float 3s ease-in-out reverse infinite;
+}
+
+.bi-facebook {
+    color: rgb(211, 13, 13);
+
+}
+
+.fb :hover {
+    color: rgba(0, 216, 126, 0.811);
+    /* color: rgb(206, 0, 0); */
+}
+
+.twitter {
+
+    text-decoration: none;
+    padding: 0 0.7vw;
+    /* margin-left: 2rem; */
+
+    font-size: 2rem;
+    animation: float 4s ease-in-out infinite;
+}
+
+.bi-twitter {
+    color: rgb(211, 13, 13);
+}
+
+.twitter :hover {
+    /* color: rgb(174, 16, 16); */
+    color: rgba(0, 216, 126, 0.811);
 }

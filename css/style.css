@@ -46,11 +46,18 @@ body {
     position: absolute;
     right: 40px;
     top: 23px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+
 }
+
 
 .right div {
     margin-left: 10px;
+
 }
+
 
 .navbar li {
     display: inline-block;
@@ -115,7 +122,8 @@ form {
     display: block;
     margin: auto;
     margin-bottom: 10px;
-    width: 80px;
+    width: 100px;
+
     text-align: center;
     text-decoration: none;
     font-family: 'Baloo Bhai 2', cursive;
@@ -124,8 +132,10 @@ form {
     padding: 4px 14px;
     border: 2px solid rgb(163, 0, 0);
     border-radius: 10px;
-    font-size: 15px;
+    font-size: auto;
     cursor: pointer;
+
+
 
 }
 
@@ -165,4 +175,10 @@ h3 {
     border: 2px solid grey;
     border-radius: 10px;
     font-size: 15px;
+}
+
+.right ul li {
+    list-style: none;
+    display: inline-flex;
+    justify-content: center;
 }
