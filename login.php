@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['username']))
+if (isset($_SESSION['username']))
     header('location : home.php')
 ?>
 
@@ -8,16 +8,17 @@ if(isset($_SESSION['username']))
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>Gaming Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@800&display=swap" rel="stylesheet">
-  <!--Main style css-->
-  <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/sections.css">
-<link rel="stylesheet" href="css/footer.css">
-<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Gaming Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@800&display=swap" rel="stylesheet">
+    <!--Main style css-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 </head>
+
 <body>
     <nav class="header">
         <div class="left">
@@ -26,7 +27,7 @@ if(isset($_SESSION['username']))
         <div class="mid">
             <ul class="navbar">
                 <li><a href="index.html" class="active">HOME</a></li>
-                <li><a href="https://rog.asus.com/articles/" target = "_blank">ABOUT</a></li>
+                <li><a href="https://rog.asus.com/articles/" target="_blank">ABOUT</a></li>
                 <li><a href="https://www.apunkagames.biz/" target="_blank">GAMES</a></li>
                 <li><a href="https://rog.asus.com/articles/news/" target="_blank">NEWS</a></li>
                 <li><a href="contact.html">CONTACT US</a></li>
@@ -37,7 +38,7 @@ if(isset($_SESSION['username']))
         </div>
     </nav>
 
-<?php
+    <?php
     require('connection_check.php');
     // When form submitted, check and create user session.
     if (isset($_POST['username'])) {
@@ -48,15 +49,15 @@ if(isset($_SESSION['username']))
         // Check user is exist in the database
         $query    = "SELECT * FROM `loginx` WHERE username='$username'
                      AND password='$password'";
-        $result = mysqli_query($con, $query) or die(mysql_error());
+        $result = mysqli_query($con, $query) or die(mysqli_error($con));
         $rows = mysqli_num_rows($result);
-       
-       
+
+
         if ($rows == 1) {
             $_SESSION['username'] = $username;
-         
-        // Welcome message
-        $_SESSION['success'] = "You have logged in";
+
+            // Welcome message
+            $_SESSION['success'] = "You have logged in";
             header("Location:home.php");
         } else {
             echo "<div class='container'>
@@ -65,26 +66,26 @@ if(isset($_SESSION['username']))
                   </div>";
         }
     } else {
-?>
+    ?>
 
-  <div class="container">
-    <h1>Log in</h1>
-    <form action="" method = "post" class="form">
-        <div class="form-group">
-            <input type="text" name="username" id="" placeholder="User name">
+        <div class="container">
+            <h1>Log in</h1>
+            <form action="" method="post" class="form">
+                <div class="form-group">
+                    <input type="text" name="username" id="" placeholder="User name">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" id="" placeholder="Password">
+                </div><br>
+                <input class="link_btn" type="submit" value="Login">
+            </form>
         </div>
-        <div class="form-group">
-            <input type="password" name="password" id="" placeholder= "Password">
-        </div><br>
-        <input class="link_btn" type="submit" value="Login">
-    </form>
-  </div>
 
-<?php
+    <?php
     }
-?>
+    ?>
 
-<div class="section1">
+    <div class="section1">
         <div class="container-left1">
             <p>We collected 16 of the best free online gta games.
                 These games include browser games for both your computer and mobile devices,
@@ -103,14 +104,14 @@ if(isset($_SESSION['username']))
         </div>
         <div class="container-left2">
             <p>The Netherrealm studio created one of the most popular games
-                 in the world, Mortal Kombat. There are huge, high-quality 
-                 shots from the games, which have made this website bright 
-                 and impressive. The main emphasis on this website is on the 
-                 game itself rather than on corporate info. We collected 16 of the best free online gta games.
-                 These games include browser games for both your computer and mobile devices,
-                 as well as apps for your Android and iOS phones and tablets.
-                 They include new gta games such as and top gta games such as Downtown 1930s Mafia,
-                 Grand Action Simulator: New York Car Gang, and Mad Town Andreas: Mafia Storie.
+                in the world, Mortal Kombat. There are huge, high-quality
+                shots from the games, which have made this website bright
+                and impressive. The main emphasis on this website is on the
+                game itself rather than on corporate info. We collected 16 of the best free online gta games.
+                These games include browser games for both your computer and mobile devices,
+                as well as apps for your Android and iOS phones and tablets.
+                They include new gta games such as and top gta games such as Downtown 1930s Mafia,
+                Grand Action Simulator: New York Car Gang, and Mad Town Andreas: Mafia Storie.
             </p>
         </div>
     </div>
@@ -129,13 +130,13 @@ if(isset($_SESSION['username']))
                 Grand Action Simulator: New York Car Gang, and Mad Town Andreas: Mafia Storie.
             </p>
         </div>
-        
+
         <div class="container-right3">
             <img src="images/4.jpg" alt="">
         </div>
     </div>
 
-<footer>
+    <footer>
         <div>
             <p>Reach us</p>
         </div>
@@ -161,4 +162,5 @@ if(isset($_SESSION['username']))
     </footer>
 
 </body>
+
 </html>

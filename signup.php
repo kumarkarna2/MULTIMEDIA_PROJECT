@@ -42,6 +42,20 @@
     require('connection_check.php');
     // When form submitted, insert values into the database.
     if (isset($_REQUEST['username'])) {
+
+        $select = mysqli_query($con, "SELECT * FROM loginx WHERE email = '" . $_POST['email'] . "'");
+
+        if (mysqli_num_rows($select)) {
+            echo "<div class='form'>
+                  <h3>This email address is already used!</h3><br/>
+                  <p class='link'>Click here to <a href='login.php'>Login</a></p>
+                  </div>";
+
+            die(mysqli_error($con));
+            // exit();
+            // exit('This email address is already used!');
+        }
+
         // removes backslashes
         $username = stripslashes($_REQUEST['username']);
         //escapes special characters in a string
@@ -71,14 +85,7 @@
                       VALUES ('$username', '$age', '$location', '$email', '$phone', '$password', '$gender', '$create_datetime')";
         $result   = mysqli_query($con, $query);
 
-        $select = mysqli_query($con, "SELECT * FROM loginx WHERE email = '" . $_POST['email'] . "'");
-        if (mysqli_num_rows($select)) {
-            echo "<div class='form'>
-                  <h3>This email address is already used!</h3><br/>
-                  <p class='link'>Click here to <a href='login.php'>Login</a></p>
-                  </div>";
-            // exit('This email address is already used!');
-        } else if ($result) {
+        if ($result) {
             echo "<div class='container'>
                     <h3>You are registered successfully.</h3>
                     <p>Click here to <a href='login.php' class='link_btn'>Login</a></p>
@@ -95,27 +102,27 @@
             <h1>Join now</h1>
             <form action="" class="form" method="post">
                 <div class="form-group">
-                    <input type="text" name="username" id="" placeholder="Enter full name">
+                    <input type="text" name="username" id="" placeholder="Enter full name" required>
                 </div>
                 <div class="form-group">
-                    <input type="number" name="age" id="" placeholder="Enter age">
+                    <input type="number" name="age" id="" placeholder="Enter age" required>
                 </div>
 
                 <div class="form-group">
                     <input type="text" name="location" id="" placeholder="Enter location">
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" id="" placeholder="Email id">
+                    <input type="email" name="email" id="" placeholder="Email id" required>
                 </div>
                 <div class="form-group">
-                    <input type="number" name="phone" id="" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" placeholder="Mobile no" />
+                    <input type="number" name="phone" id="" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" placeholder="Mobile no" required />
 
                 </div>
                 <div class="form-group">
-                    <input type="password" name="password" placeholder="Enter password">
+                    <input type="password" name="password" placeholder="Enter password" required>
                 </div>
                 <div class="form_group_radio">
-                    <input type="radio" name="gender" value="male">Male<br>
+                    <input type="radio" name="gender" value="male" required>Male<br>
                     <input type="radio" name="gender" value="female">Female<br>
                     <input type="radio" name="gender" value="other">Other<br><br>
                 </div>
