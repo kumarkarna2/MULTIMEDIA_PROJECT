@@ -12,7 +12,13 @@
 <link rel="stylesheet" href="css/sections.css">
 <link rel="stylesheet" href="css/footer.css">
 <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
 
 <body>
     <nav class="header">
@@ -22,7 +28,7 @@
         <div class="mid">
             <ul class="navbar">
                 <li><a href="index.html" class="active">HOME</a></li>
-                <li><a href="https://rog.asus.com/articles/" target = "_blank">ABOUT</a></li>
+                <li><a href="https://rog.asus.com/articles/" target="_blank">ABOUT</a></li>
                 <li><a href="https://www.apunkagames.biz/" target="_blank">GAMES</a></li>
                 <li><a href="https://rog.asus.com/articles/news/" target="_blank">NEWS</a></li>
                 <li><a href="contact.html">CONTACT US</a></li>
@@ -32,89 +38,98 @@
             <div><a href="login.php" class="link_btn">LOG IN</a></div>
         </div>
     </nav>
-<?php
-  require('connection_check.php');
-      // When form submitted, insert values into the database.
-      if (isset($_REQUEST['username'])) {
-          // removes backslashes
-          $username = stripslashes($_REQUEST['username']);
-          //escapes special characters in a string
-          $username = mysqli_real_escape_string($con, $username);
+    <?php
+    require('connection_check.php');
+    // When form submitted, insert values into the database.
+    if (isset($_REQUEST['username'])) {
+        // removes backslashes
+        $username = stripslashes($_REQUEST['username']);
+        //escapes special characters in a string
+        $username = mysqli_real_escape_string($con, $username);
 
-          $age = stripslashes($_REQUEST['age']);
-          $age = mysqli_real_escape_string($con, $age);
+        $age = stripslashes($_REQUEST['age']);
+        $age = mysqli_real_escape_string($con, $age);
 
-          $location = stripslashes($_REQUEST['location']);
-          $location = mysqli_real_escape_string($con, $location);
+        $location = stripslashes($_REQUEST['location']);
+        $location = mysqli_real_escape_string($con, $location);
 
-          $email    = stripslashes($_REQUEST['email']);
-          $email    = mysqli_real_escape_string($con, $email);
+        $email    = stripslashes($_REQUEST['email']);
+        $email    = mysqli_real_escape_string($con, $email);
 
-          $phone    = stripslashes($_REQUEST['phone']);
-          $phone    = mysqli_real_escape_string($con, $phone);
+        $phone    = stripslashes($_REQUEST['phone']);
+        $phone    = mysqli_real_escape_string($con, $phone);
 
-          $password = stripslashes($_REQUEST['password']);
-          $password = mysqli_real_escape_string($con, $password);
+        $password = stripslashes($_REQUEST['password']);
+        $password = mysqli_real_escape_string($con, $password);
 
-          $gender = stripslashes($_REQUEST['gender']);
-          $gender = mysqli_real_escape_string($con, $gender);
+        $gender = stripslashes($_REQUEST['gender']);
+        $gender = mysqli_real_escape_string($con, $gender);
 
-          $create_datetime = date("Y-m-d H:i:s");
+        $create_datetime = date("Y-m-d H:i:s");
 
-          $query    = "INSERT into `loginx` (username, age, location, email, phone, password, gender, create_datetime)
+        $query    = "INSERT into `loginx` (username, age, location, email, phone, password, gender, create_datetime)
                       VALUES ('$username', '$age', '$location', '$email', '$phone', '$password', '$gender', '$create_datetime')";
-          $result   = mysqli_query($con, $query);
-          if ($result) {
-              echo "<div class='container'>
+        $result   = mysqli_query($con, $query);
+
+        $select = mysqli_query($con, "SELECT * FROM loginx WHERE email = '" . $_POST['email'] . "'");
+        if (mysqli_num_rows($select)) {
+            echo "<div class='form'>
+                  <h3>This email address is already used!</h3><br/>
+                  <p class='link'>Click here to <a href='login.php'>Login</a></p>
+                  </div>";
+            // exit('This email address is already used!');
+        } else if ($result) {
+            echo "<div class='container'>
                     <h3>You are registered successfully.</h3>
                     <p>Click here to <a href='login.php' class='link_btn'>Login</a></p>
                     </div>";
-          } else {
-              echo "<div class='container'>
+        } else {
+            echo "<div class='container'>
                     <h3>Required fields are missing.</h3><br/>
                     <p>Click here to <a href='signup.php' class='link_btn'>registration</a> again.</p>
                     </div>";
-          }
-      } else{
-?>
-    <div class="container">
-        <h1>Join now</h1>
-        <form action="" class="form" method = "post">
-            <div class="form-group">
-                <input type="text" name="username" id="" placeholder="Enter full name">
-            </div>
-            <div class="form-group">
-                <input type="text" name="age" id="" placeholder="Enter age">
-            </div>
-            
-            <div class="form-group">
-                <input type="text" name="location" id="" placeholder="Enter location">
-            </div>
-            <div class="form-group">
-                <input type="email" name="email" id="" placeholder="Email id">
-            </div>
-            <div class="form-group">
-                <input type="text" name="phone" id="" placeholder="Mobile no">
-            </div>
-            <div class="form-group">
-                <input type="password" name="password" placeholder="Enter password">
-            </div>
-            <div class="form_group_radio">
-                <input type="radio" name="gender" value="male">Male<br>
-                <input type="radio" name="gender" value="female">Female<br>
-                <input type="radio" name="gender" value="other">Other<br><br>
-            </div>
-            <input type="submit" value="Submit" class="link_btn">
+        }
+    } else {
+    ?>
+        <div class="container">
+            <h1>Join now</h1>
+            <form action="" class="form" method="post">
+                <div class="form-group">
+                    <input type="text" name="username" id="" placeholder="Enter full name">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="age" id="" placeholder="Enter age">
+                </div>
 
-            <div class="login_div">
-                <p>Already a member?</p>
-                <a class="link_btn" href="login.php">Log in</a>
-            </div>
-        </form>
-    </div>
-<?php
-      }
-?>
+                <div class="form-group">
+                    <input type="text" name="location" id="" placeholder="Enter location">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" id="" placeholder="Email id">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="phone" id="" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" placeholder="Mobile no" />
+
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Enter password">
+                </div>
+                <div class="form_group_radio">
+                    <input type="radio" name="gender" value="male">Male<br>
+                    <input type="radio" name="gender" value="female">Female<br>
+                    <input type="radio" name="gender" value="other">Other<br><br>
+                </div>
+                <input type="submit" value="Submit" class="link_btn">
+
+                <div class="login_div">
+                    <p>Already a member?</p>
+                    <a class="link_btn" href="login.php">Log in</a>
+                </div>
+            </form>
+        </div>
+    <?php
+    }
+    ?>
 
     <div class="section1">
         <div class="container-left1">
@@ -135,14 +150,14 @@
         </div>
         <div class="container-left2">
             <p>The Netherrealm studio created one of the most popular games
-                 in the world, Mortal Kombat. There are huge, high-quality 
-                 shots from the games, which have made this website bright 
-                 and impressive. The main emphasis on this website is on the 
-                 game itself rather than on corporate info. We collected 16 of the best free online gta games.
-                 These games include browser games for both your computer and mobile devices,
-                 as well as apps for your Android and iOS phones and tablets.
-                 They include new gta games such as and top gta games such as Downtown 1930s Mafia,
-                 Grand Action Simulator: New York Car Gang, and Mad Town Andreas: Mafia Storie.
+                in the world, Mortal Kombat. There are huge, high-quality
+                shots from the games, which have made this website bright
+                and impressive. The main emphasis on this website is on the
+                game itself rather than on corporate info. We collected 16 of the best free online gta games.
+                These games include browser games for both your computer and mobile devices,
+                as well as apps for your Android and iOS phones and tablets.
+                They include new gta games such as and top gta games such as Downtown 1930s Mafia,
+                Grand Action Simulator: New York Car Gang, and Mad Town Andreas: Mafia Storie.
             </p>
         </div>
     </div>
@@ -161,13 +176,13 @@
                 Grand Action Simulator: New York Car Gang, and Mad Town Andreas: Mafia Storie.
             </p>
         </div>
-        
+
         <div class="container-right3">
             <img src="images/4.jpg" alt="">
         </div>
     </div>
 
-<footer>
+    <footer>
         <div>
             <p>Reach us</p>
         </div>
