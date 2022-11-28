@@ -1,6 +1,5 @@
 body {
   font-family: "Baloo Bhai 2", cursive;
-  /* background-image: url("../images/bg.jpg"); */
   background: rgb(10, 0, 36);
   background: linear-gradient(
     180deg,
@@ -81,7 +80,6 @@ body {
 }
 
 .navbar li a:hover {
-  /* color: rgb(25, 25, 25); */
   color: rgb(255, 0, 0);
 }
 
@@ -105,11 +103,6 @@ form {
   border-radius: 12px;
   font-size: 15px;
 }
-
-/* .text_white{
-    color: white;
-    text-align: center;
-} */
 
 .form_group_radio {
   display: inline-block;
@@ -143,29 +136,12 @@ form {
 }
 
 .link_btn:hover {
-  /* color: rgb(25, 25, 25); */
   color: rgb(255, 0, 0);
   background-color: rgba(255, 255, 255, 0.014);
 }
 
 .container {
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.container p{
-    width: 200px;
-    color: rgb(159, 0, 0);
-    font-size: 1.8rem;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    border: 3px solid rgb(0, 0, 0);
-    border-radius: 10px;
-    border-top: transparent;
-    border-right: transparent;
-    border-left: transparent;
 }
 
 .container button {
@@ -174,17 +150,12 @@ form {
   display: block;
   width: 100px;
   margin: 20px auto;
-  margin-bottom: 50px;
 }
 
 .container h1,
 h3 {
   text-align: center;
   color: white;
-}
-
-.submit{
-    margin: 50px;
 }
 
 .user {

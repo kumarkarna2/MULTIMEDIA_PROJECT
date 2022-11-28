@@ -1,6 +1,6 @@
 body {
   font-family: "Baloo Bhai 2", cursive;
-  /* background-image: url("../images/bg.jpg"); */
+  /* background-image: url("../../images/bg.jpg"); */
   background: rgb(10, 0, 36);
   background: linear-gradient(
     180deg,
@@ -15,7 +15,7 @@ body {
   border-radius: 15px;
   height: 80px;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.422);
+  background-color: rgba(0, 0, 0, 0.103);
 }
 
 .left {
@@ -76,12 +76,11 @@ body {
 }
 
 .navbar li a.active {
-  /* color: rgb(95, 0, 0); */
-  color: rgb(176, 0, 0);
+  color: rgb(192, 0, 0);
 }
 
 .navbar li a:hover {
-  /* color: rgb(25, 25, 25); */
+  /* color: rgb(163, 0, 0); */
   color: rgb(255, 0, 0);
 }
 
@@ -143,29 +142,13 @@ form {
 }
 
 .link_btn:hover {
-  /* color: rgb(25, 25, 25); */
+  /* color: rgb(163, 0, 0); */
   color: rgb(255, 0, 0);
   background-color: rgba(255, 255, 255, 0.014);
 }
 
 .container {
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.container p{
-    width: 200px;
-    color: rgb(159, 0, 0);
-    font-size: 1.8rem;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    border: 3px solid rgb(0, 0, 0);
-    border-radius: 10px;
-    border-top: transparent;
-    border-right: transparent;
-    border-left: transparent;
 }
 
 .container button {
@@ -174,17 +157,12 @@ form {
   display: block;
   width: 100px;
   margin: 20px auto;
-  margin-bottom: 50px;
 }
 
 .container h1,
 h3 {
   text-align: center;
   color: white;
-}
-
-.submit{
-    margin: 50px;
 }
 
 .user {
