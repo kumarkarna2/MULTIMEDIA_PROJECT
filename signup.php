@@ -119,7 +119,7 @@
 
                 </div>
                 <div class="form-group">
-                    <input type="password" name="password" placeholder="Enter password" required>
+                    <input type="password" name="password" placeholder="Enter password" minlength="8" required>
                 </div>
                 <div class="form_group_radio">
                     <input type="radio" name="gender" value="male" required>Male<br>
