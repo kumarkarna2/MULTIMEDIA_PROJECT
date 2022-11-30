@@ -33,13 +33,13 @@
         <ul class="navbar">
           <li><a href="home.php" class="active">HOME</a></li>
           <li>
-            <a href="articles.html">ARTICLES</a>
+            <a href="articles.php">ARTICLES</a>
           </li>
           <li>
-            <a href="games.html">GAMES</a>
+            <a href="games.php">GAMES</a>
           </li>
           <li>
-            <a href="news.html"
+            <a href="news.php"
               >NEWS</a
             >
           </li>

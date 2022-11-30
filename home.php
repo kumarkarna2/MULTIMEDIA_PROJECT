@@ -44,14 +44,14 @@ if(!isset($_SESSION['username']))
             <a href="articles.php">ARTICLES</a>
           </li>
           <li>
-            <a href="games.html">GAMES</a>
+            <a href="games.php">GAMES</a>
           </li>
           <li>
-            <a href="news.html"
+            <a href="news.php"
               >NEWS</a
             >
           </li>
-          <li><a href="contact.html">CONTACT US</a></li>
+          <li><a href="contact.php">CONTACT US</a></li>
         </ul>
       </div>
         <div class="right">

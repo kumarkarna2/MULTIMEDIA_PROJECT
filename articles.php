@@ -39,7 +39,7 @@ if(!isset($_SESSION['username']))
         <ul class="navbar">
           <li><a href="home.php" class="active">HOME</a></li>
           <li>
-            <a href="games.html">GAMES</a>
+            <a href="games.php">GAMES</a>
           </li>
           <li>
             <a href="news.php"
