@@ -31,7 +31,7 @@
 
 
 
-/* .section1 {
+.section1 {
     display: flex;
     margin-top: 50px;
     justify-content: center;
@@ -106,5 +106,3 @@
 .pics {
     height: 250px;
 }
-
-*/
