@@ -1,0 +1,198 @@
+<?php
+session_start();
+if(!isset($_SESSION['username']))
+    header('location : index.html')
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <title>Articles</title>
+  </head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/articles/style.css" />
+  <link rel="stylesheet" href="css/articles/footer.css" />
+  <link rel="stylesheet" href="css/articles/section.css" />
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+
+  <body>
+    <nav class="header">
+      <div class="left">
+        <a href="home.php"><img src="images/logo.png" alt="" /></a>
+        <!-- <a href="#"><img src="images/logo.png" alt=""></a> -->
+      </div>
+      <div class="mid">
+        <ul class="navbar">
+          <li><a href="home.php" class="active">HOME</a></li>
+          <li>
+            <a href="games.php">GAMES</a>
+          </li>
+          <li>
+            <a href="articles.php">ARTICLES</a>
+          </li>
+          <li><a href="contact.php">CONTACT US</a></li>
+        </ul>
+      </div>
+      </div>
+        <div class="right">
+            <div class="user"><?php echo $_SESSION['username']; ?></div>
+            <div><a href="logout.php" class="link_btn">LOGOUT</a></div>
+        </div>
+    </nav>
+
+    <div class="sections">
+      <div class="current_page_container">
+        <p class="current_page_text">NEWS</p>
+      </div>
+      <div class="section1">
+        <div class="container-left1">
+          <p class="heading">
+            THE ROG SWIFT 500HZ SHATTERS BOUNDARIES WITH ITS ULTRA-FAST PANEL
+          </p>
+          <p class="article">
+            Back in 2012, ASUS released the world’s first ever 144Hz monitor,
+            and we’ve been chasing high refresh rates ever since. From the first
+            240Hz NVIDIA® G-SYNC display we released in 2017 to the first 360Hz
+            display in 2020, ROG is committed to pushing competitive gaming to
+            new heights at every opportunity. Now, we’re ecstatic to announce
+            that we’ve done it again: introducing the ROG Swift 500Hz, a
+            groundbreaking new gaming monitor that refreshes 500 times per
+            second, for the most fluid, ...
+            <a
+              href="https://rog.asus.com/articles/news/the-rog-swift-500hz-shatters-boundaries-with-its-ultra-fast-panel/"
+            >
+              Read More
+            </a>
+          </p>
+        </div>
+        <div class="container-right1">
+          <img class="pics" src="images/news/news1.webp" alt="" />
+        </div>
+      </div>
+
+      <div class="section2">
+        <div class="container-right2">
+          <img class="pics" src="images/news/news2.webp" alt="" />
+        </div>
+        <div class="container-left2">
+          <p class="heading">
+            THE BEST JUST GOT BETTER: INTRODUCING THE 2022 ROG STRIX SCAR 17
+            SPECIAL EDITION
+          </p>
+          <p class="article">
+            In January, we introduced the ROG Strix SCAR 2022, an ultra-powerful
+            esports gaming machine designed to blow away any and all
+            competition. But we couldn’t leave well enough alone, so we decided
+            to make it even better. We’re proud to announce the ROG Strix SCAR
+            17 Special Edition, the ultimate laptop for competitive gaming. For
+            most gamers, the regular 2022 Strix SCAR is the perfect companion,
+            since it’s lighter and more affordable than the new Special Edition,
+            while offering exceptional gaming performance. ...
+            <a
+              href="https://rog.asus.com/articles/news/the-best-just-got-better-introducing-the-rog-strix-scar-17-special-edition/"
+            >
+              Read More
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="section3">
+        <div class="container-left3">
+          <p class="heading">
+            THE NEW ROG FLOW X16 MELDS PREMIUM POWER WITH A PORTABLE DESIGN
+          </p>
+          <p class="article">
+            The portable and lightweight Flow family has a new member. ROG is
+            proud to introduce the Flow X16, a convertible thin and light laptop
+            with gaming horsepower that belies its size. Paired with the
+            stunning Nebula HDR Display and fully compatible with the XG Mobile
+            ecosystem, the Flow X16 is ready to redefine how you look at
+            ultraportable gaming laptops. ...
+            <a
+              href="https://rog.asus.com/articles/news/the-rog-flow-x16-melds-premium-power-with-a-portable-design/"
+            >
+              Read More
+            </a>
+          </p>
+        </div>
+
+        <div class="container-right3">
+          <img class="pics" src="images/news/news3.webp" alt="" />
+        </div>
+      </div>
+
+      <div class="section4">
+        <div class="container-right4">
+          <img class="pics" src="images/news/news4.webp" alt="" />
+        </div>
+        <div class="container-left4">
+          <p class="heading">
+            ROG STRIX G ADVANTAGE EDITION GAMING LAPTOPS GO ALL-IN ON AMD
+          </p>
+          <p class="article">
+            These are the world’s first laptops featuring AMD’s latest Radeon™
+            RX 6800M GPU. The new graphics processor is paired with a powerful
+            Ryzen™ 9 5900HX CPU to deliver a phenomenal gaming experience for
+            everything from elite esports to everyday entertainment.
+            AMD-exclusive SmartShift and Smart Access Memory technologies help
+            the CPU and GPU work more intelligently together to maximize
+            performance and efficiency. ...
+            <a
+              href="https://rog.asus.com/articles/news/rog-strix-g-advantage-edition-gaming-laptops-go-all-in-on-amd/"
+            >
+              Read More
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="reachus">
+        <p>Reach us</p>
+      </div>
+      <div class="footer_div1">
+        <ul>
+          <li class="fb">
+            <a href="https://www.facebook.com/ASUSROGInd/" target="_blank"
+              ><i class="bi bi-facebook"></i
+            ></a>
+          </li>
+          <li class="insta">
+            <a
+              href="https://www.instagram.com/asusrog.in/?hl=en"
+              target="_blank"
+              ><i class="bi bi-instagram"></i
+            ></a>
+          </li>
+          <li class="twitter">
+            <a href="https://twitter.com/asus_rog_in?lang=en" target="_blank"
+              ><i class="bi bi-twitter"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer_div2">
+        <p>Terms and conditions apply</p>
+      </div>
+      <div class="footer_div3">
+        <a href="https://rog.asus.com/in/" target="_blank">rog.asus.com</a>
+      </div>
+    </footer>
+  </body>
+</html>

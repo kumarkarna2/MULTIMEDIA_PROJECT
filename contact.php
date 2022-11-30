@@ -26,7 +26,7 @@
   <body>
     <nav class="header">
       <div class="left">
-        <a href="index.html"><img src="images/logo.png" alt="" /></a>
+        <a href="home.php"><img src="images/logo.png" alt="" /></a>
         <!-- <a href="#"><img src="images/logo.png" alt=""></a> -->
       </div>
       <div class="mid">

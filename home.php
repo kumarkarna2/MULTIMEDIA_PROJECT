@@ -32,7 +32,7 @@ if(!isset($_SESSION['username']))
   <body>
     <nav class="header">
       <div class="left">
-        <a href="index.html"><img src="images/logo.png" alt="" /></a>
+        <a href="home.php"><img src="images/logo.png" alt="" /></a>
         <!-- <a href="#"><img src="images/logo.png" alt=""></a> -->
       </div>
       <div class="mid">
@@ -41,7 +41,7 @@ if(!isset($_SESSION['username']))
             <a href="home.php" class="active">HOME</a>
         </li>
           <li>
-            <a href="articles.html">ARTICLES</a>
+            <a href="articles.php">ARTICLES</a>
           </li>
           <li>
             <a href="games.html">GAMES</a>
