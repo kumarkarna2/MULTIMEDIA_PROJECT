@@ -1,21 +1,21 @@
-.heading{
+.heading {
     font-size: 1.5rem;
     margin-top: 10px;
 }
 
-.article{
+.article {
     font-size: 1rem;
     color: rgb(192, 192, 192);
 }
 
-.sections{
+.sections {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.current_page_container{
+.current_page_container {
     width: 200px;
     height: 50px;
     margin-top: 30px;
@@ -24,12 +24,12 @@
     border-radius: 10px;
 }
 
-.current_page_text{
+.current_page_text {
     color: rgb(159, 0, 0);
     font-size: 1.8rem;
 }
 
-.section1{
+.section1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,13 +47,13 @@
     border-right: transparent;
 }
 
-.container-mid1{
+.container-mid1 {
     padding-left: 120px;
     width: 33%;
     align-items: center;
 }
 
-.container-right1{
+.container-right1 {
     display: flex;
     flex-direction: column;
     color: white;
@@ -65,7 +65,7 @@
 }
 
 /* --------------------------------------------------------- */
-.section2{
+.section2 {
     display: flex;
     margin-top: 50px;
     justify-content: center;
@@ -89,7 +89,7 @@
 
 /* --------------------------------------------------- */
 
-.section3{
+.section3 {
     display: flex;
     margin-top: 50px;
     justify-content: center;
@@ -112,7 +112,7 @@
 }
 
 /* --------------------------------------------------------- */
-.section4{
+.section4 {
     display: flex;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -134,10 +134,15 @@
     width: 33%;
 }
 
-.download_section{
+.download_section {
     margin-bottom: 30px;
 }
 
-.pics{
+.download_container a {
+    text-decoration: none;
+    color: white;
+}
+
+.pics {
     height: 250px;
 }
