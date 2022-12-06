@@ -64,7 +64,7 @@ if(!isset($_SESSION['username']))
       <div class="section1">
         <div class="container-left1">
           <p>
-            We collected 16 of the best free online gta games. These games
+            We collected 16 of the best free online GTA games. These games
             include browser games for both your computer and mobile devices, as
             well as apps for your Android and iOS phones and tablets. They
             include new gta games such as and top gta games such as Downtown
